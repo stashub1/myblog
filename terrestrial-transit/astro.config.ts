@@ -3,8 +3,13 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://stashub1.github.io',
-  base: '/myblog',
+  // used to generate images
+  site:
+    process.env.VERCEL_ENV === 'production'
+      ? 'https://brutal.elian.codes/'
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}/`
+        : 'https://localhost:3000/',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   vite: {
