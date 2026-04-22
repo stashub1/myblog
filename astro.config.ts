@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://stashub1.github.io',
-  base: '/myblog',
+  base: '/myblog/',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
   vite: {
